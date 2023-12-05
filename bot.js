@@ -16,6 +16,7 @@ const openai = new OpenAI({
 
 bot.on("message", async (msg) => {
   console.log(msg);
+
   const chatId = msg.chat.id;
   if (msg.text && msg.text.trim() !== "") {
     const reply = await openai.chat.completions.create({
