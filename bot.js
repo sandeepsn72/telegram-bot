@@ -1,17 +1,15 @@
 const telegram = require("node-telegram-bot-api");
 const OpenAI = require("openai");
+require("dotenv").config();
 
-telegramToken = "6572244393:AAFWB_Mdy7-PpWjE2FJjTfC27B9UHCfo9Ek";
-openAiToken = "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";
+const bot = new telegram(process.env.telegramToken, { polling: true });
 
-const bot = new telegram(telegramToken, { polling: true });
-
-bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(chatId, "Welcome to Sandeep Saini's Chat BOT");
-});
+// bot.onText(/\/start/, (msg) => {
+//   bot.sendMessage(chatId, "Welcome to Sandeep Saini's Chat BOT");
+// });
 
 const openai = new OpenAI({
-  apiKey: openAiToken, // This is also the default, can be omitted
+  apiKey: process.env.openAiToken, // This is also the default, can be omitted
 });
 
 bot.on("message", async (msg) => {
