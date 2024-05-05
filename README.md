@@ -1,4 +1,3 @@
-Certainly! Here's a basic example of documentation for your GitHub project. Make sure to customize it according to the specific details of your project.
 
 ````markdown
 # Sandeep Saini's Chat BOT
